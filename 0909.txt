@@ -1,0 +1,30 @@
+0909
+used when referring to IO related systems
+	- blocking : it will not return until there is activity
+			In most cases, processes spend much of their time waiting for something else
+		synchronous :
+	- non-blocking : system calls will return immediately if there is nothing pending
+			it is able to have multiple requests in progress at the same time by the same process(thread).
+			A single process is able to handle multiple concurrent requests by interleaving non-blocking IO calls for all the requests
+		asynchronous : from client side, receive a callback when the data has been recevied -> let brower continue to work as normal while the request is being handled
+
+
+version & compatibility
+
+Test coverage
+	white box test :	1) statement coverage (check code level errors)
+						2) dicision coverage (branch test)
+						3) condition coverage
+	black box test :	1) syntax testing (input as valid value or invalid values)
+						2) equivalent partitioning
+						3) boundary testing
+						4) decision table
+	*Path coverage : test different possible paths of method triggeration
+
+google의 test
+	small & medium & large
+	small : automated
+			data corruption 
+			faked, mocks
+			no external dependencies
+	medium: integration test
