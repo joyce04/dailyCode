@@ -34,7 +34,8 @@ public class TeamControllerTest {
     @Test
     public void PATCH_updatePlayersToTeam_return200() throws Exception {
         List<Player> players = Collections.singletonList(Player.builder().name("player one").number(11).build());
-        ResponseEntity<Map> response = restTemplate.exchange("/teams/team_id/players",
+        ResponseEntity<Map> response = restTemplate.exchange(
+                "/teams/team_id/players",
                 HttpMethod.PATCH,
                 new HttpEntity<>(players, new HttpHeaders()),
                 Map.class);
