@@ -1,5 +1,6 @@
 package joyce.daily.learning.patch;
 
+import joyce.daily.learning.model.Player;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
