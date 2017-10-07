@@ -1,4 +1,4 @@
-package joyce.daily.learning.exceptionHandler;
+package joyce.daily.exceptionHandler;
 
 public class CustomException extends RuntimeException {
     public CustomException() {

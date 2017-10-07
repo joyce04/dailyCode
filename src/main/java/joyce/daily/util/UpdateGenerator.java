@@ -1,4 +1,4 @@
-package joyce.daily.learning.fieldExtraction;
+package joyce.daily.util;
 
 import org.springframework.data.mongodb.core.query.Update;
 

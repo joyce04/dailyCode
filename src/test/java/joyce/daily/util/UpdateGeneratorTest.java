@@ -1,11 +1,13 @@
-package joyce.daily.learning.fieldExtraction;
+package joyce.daily.util;
 
+import joyce.daily.model.Coach;
+import joyce.daily.model.Team;
 import org.junit.Test;
 import org.springframework.data.mongodb.core.query.Update;
 
 import java.util.Map;
 
-import static joyce.daily.learning.fieldExtraction.Division.HIGH_SCHOOL;
+import static joyce.daily.model.Division.HIGH_SCHOOL;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.data.MapEntry.entry;
 

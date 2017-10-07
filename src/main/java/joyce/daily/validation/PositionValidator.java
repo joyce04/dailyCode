@@ -1,4 +1,4 @@
-package joyce.daily.learning.validation;
+package joyce.daily.validation;
 
 public @interface PositionValidator {
     Class<?> groups();

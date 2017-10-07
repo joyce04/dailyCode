@@ -1,4 +1,4 @@
-package joyce.daily.learning.fieldExtraction;
+package joyce.daily.model;
 
 public enum Division {
     HIGH_SCHOOL("high school"),

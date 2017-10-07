@@ -1,4 +1,4 @@
-package joyce.daily.learning.exceptionHandler;
+package joyce.daily.exceptionHandler;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

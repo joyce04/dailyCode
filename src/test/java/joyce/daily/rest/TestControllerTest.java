@@ -1,4 +1,4 @@
-package joyce.daily.learning.exceptionHandler;
+package joyce.daily.rest;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

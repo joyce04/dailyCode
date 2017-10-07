@@ -1,4 +1,4 @@
-package joyce.daily.learning.validation;
+package joyce.daily.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 
@@ -6,14 +6,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-public enum PositionEnum {
+public enum Position {
     ATTACK("attack"),
     MIDFIELD("midfield"),
     DEFENCE("defence"),
     GOALKEEPER("goalKeeper"),
     NONE("none");
 
-    private static Map<String, PositionEnum> bindingMap = new HashMap<>();
+    private static Map<String, Position> bindingMap = new HashMap<>();
 
     static {
         bindingMap.put("attack", ATTACK);
@@ -24,12 +24,12 @@ public enum PositionEnum {
 
     private String value;
 
-    PositionEnum(String value) {
+    Position(String value) {
         this.value = value;
     }
 
     @JsonCreator
-    public static PositionEnum fromValue(String value) {
+    public static Position fromValue(String value) {
         return Optional.ofNullable(bindingMap.get(value))
                 .orElse(NONE);
     }

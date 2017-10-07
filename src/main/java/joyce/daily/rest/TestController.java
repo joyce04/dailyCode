@@ -1,5 +1,6 @@
-package joyce.daily.learning.exceptionHandler;
+package joyce.daily.rest;
 
+import joyce.daily.exceptionHandler.CustomException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

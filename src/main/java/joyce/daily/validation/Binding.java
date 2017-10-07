@@ -1,4 +1,4 @@
-package joyce.daily.learning.validation;
+package joyce.daily.validation;
 
 import javax.validation.GroupSequence;
 

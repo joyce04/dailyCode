@@ -1,4 +1,4 @@
-package joyce.daily.learning.fieldExtraction;
+package joyce.daily.model;
 
 import lombok.*;
 

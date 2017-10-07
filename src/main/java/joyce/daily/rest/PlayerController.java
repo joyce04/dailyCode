@@ -1,6 +1,7 @@
-package joyce.daily.learning.validation;
+package joyce.daily.rest;
 
-import joyce.daily.learning.model.Player;
+import joyce.daily.validation.Binding;
+import joyce.daily.model.Player;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;

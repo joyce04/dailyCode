@@ -1,8 +1,7 @@
-package joyce.daily.learning.model;
+package joyce.daily.model;
 
-import joyce.daily.learning.validation.Binding;
-import joyce.daily.learning.validation.PositionValidator;
-import joyce.daily.learning.validation.PositionEnum;
+import joyce.daily.validation.Binding;
+import joyce.daily.validation.PositionValidator;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -29,7 +28,7 @@ public class Player {
     @Getter
     @Setter
     @NotBlank(groups = Binding.Required.class)
-    @PositionValidator(groups = Binding.Invalid.class, enumClass = PositionEnum.class)
+    @PositionValidator(groups = Binding.Invalid.class, enumClass = Position.class)
     private String position;
 
     @Getter

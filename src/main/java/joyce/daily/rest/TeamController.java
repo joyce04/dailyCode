@@ -1,6 +1,6 @@
-package joyce.daily.learning.patch;
+package joyce.daily.rest;
 
-import joyce.daily.learning.model.Player;
+import joyce.daily.model.Player;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

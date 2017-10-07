@@ -1,6 +1,6 @@
-package joyce.daily.learning.validation;
+package joyce.daily.rest;
 
-import joyce.daily.learning.model.Player;
+import joyce.daily.model.Player;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
