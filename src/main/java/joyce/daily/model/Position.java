@@ -1,6 +1,7 @@
 package joyce.daily.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,5 +33,10 @@ public enum Position {
     public static Position fromValue(String value) {
         return Optional.ofNullable(bindingMap.get(value))
                 .orElse(NONE);
+    }
+
+    @JsonValue
+    public String toValue(){
+        return this.value;
     }
 }

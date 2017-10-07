@@ -1,15 +1,20 @@
-buildscript{
-    ext{
+buildscript {
+    ext {
         springBootVersion = '1.5.6.RELEASE'
     }
-    repositories{
+    repositories {
         mavenCentral()
     }
-    dependencies{
+    dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath ("info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.1.11")
+        classpath("info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.1.11")
     }
 }
+
+plugins {
+    id 'org.unbroken-dome.test-sets' version '1.4.2'
+}
+
 group 'dailyCode'
 version '1.0-SNAPSHOT'
 
@@ -20,9 +25,13 @@ apply plugin: 'info.solidsoft.pitest'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+testSets {
+    functionalTest
+}
+
 repositories {
     mavenCentral()
-    maven {url 'https://jitpack.io'}
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
@@ -32,11 +41,14 @@ dependencies {
     //lombok
     compile("org.projectlombok:lombok:1.16.10")
 
+
     testCompile("org.springframework.boot:spring-boot-starter-test")
     testCompile("org.junit.jupiter:junit-jupiter-api:5.0.0-RC2")
 
     //for PATCH Method
     testCompile("org.apache.httpcomponents:httpclient:4.5.3")
+
+    functionalTestCompile("io.rest-assured:rest-assured:3.0.3")
 }
 
 //for mutation test
@@ -46,3 +58,5 @@ pitest {
     threads = 4
     outputFormats = ['HTML']
 }
+
+functionalTest.mustRunAfter test

@@ -8,7 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.NotBlank;
 
-import javax.validation.constraints.Pattern;
+import javax.validation.constraints.NotNull;
 
 @Builder
 @AllArgsConstructor
@@ -21,15 +21,14 @@ public class Player {
 
     @Getter
     @Setter
-    @NotBlank(groups = Binding.Required.class)
-    @Pattern(groups = Binding.Invalid.class, regexp = "^[0-9]{2}")
+    @NotNull(groups = Binding.Required.class)
     private Integer age;
 
     @Getter
     @Setter
-    @NotBlank(groups = Binding.Required.class)
+    @NotNull(groups = Binding.Required.class)
     @PositionValidator(groups = Binding.Invalid.class, enumClass = Position.class)
-    private String position;
+    private Position position;
 
     @Getter
     @Setter
