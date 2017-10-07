@@ -13,6 +13,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
@@ -31,8 +33,17 @@ public class PlayerControllerTest {
 
         assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
         assertEquals(response.getBody().size(), 3);
-        Map<String, String> map = new HashMap<>();
-        map.put("code", "NotBlank");
-        assertThat(response.getBody()).contains(map);
+
+        assertThat(response.getBody()).containsAll(generateRequiredErrors());
+    }
+
+    private List<Map<String, String>> generateRequiredErrors() {
+        return Stream.of("age", "name", "position")
+                .map(str -> {
+                    Map<String, String> map = new HashMap<>();
+                    map.put("code", "NotBlank");
+                    map.put("field", str);
+                    return map;
+                }).collect(Collectors.toList());
     }
 }
